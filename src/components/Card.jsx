@@ -17,7 +17,10 @@ function PokemonCard({ pokemon }) {
 
       <CardMedia
         component="img"
-        image={pokemon.sprites.front_default}
+        image={pokemon.sprites.other["official-artwork"].front_default
+
+        }
+
         alt={pokemon.name}
       />
 
@@ -28,11 +31,11 @@ function PokemonCard({ pokemon }) {
         </Typography>
 
         <Typography>
-          Peso: {pokemon.weight}
+          Peso: {pokemon.weight / 10} kg
         </Typography>
 
         <Typography>
-          Altura: {pokemon.height}
+          Altura: {pokemon.height / 10} m
         </Typography>
 
       </CardContent>

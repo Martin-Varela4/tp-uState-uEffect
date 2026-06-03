@@ -24,7 +24,7 @@ function App() {
   <div className="BuscadorPokemon">
     <Container maxWidth="sm">
 
-      <h1>Buscador Pokémon</h1>
+      <h1>Buscador Pokemon</h1>
 
       <Stack spacing={2}>
 
