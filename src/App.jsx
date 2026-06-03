@@ -2,7 +2,11 @@ import { useState } from 'react';
 import Input from "./components/Input";
 import Card from "./components/Card";
 import { useFetch } from "./hooks/useFetch";
-
+import CircularProgress from "@mui/material/CircularProgress";
+import Alert from "@mui/material/Alert";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import "./App.css";
 
 function App() {
 
@@ -17,28 +21,40 @@ function App() {
 
   return (
 
-    <div className="BuscadorPokemon"> 
+  <div className="BuscadorPokemon">
+    <Container maxWidth="sm">
 
-      <h1>Buscador de Pokemon</h1>
+      <h1>Buscador Pokémon</h1>
 
-      <Input
-        valor= {nombrePokemon}
-        setValor={setNombrePokemon}
-        onBuscar= {handleBuscar}
-      />
+      <Stack spacing={2}>
 
-      {loading && <p>Cargando</p>}
-      {error && <p>{error}</p>}
-      {data && (
-        <Card pokemon= {data} />
-      )}
-      
+        <Input
+          valor={nombrePokemon}
+          setValor={setNombrePokemon}
+          onBuscar={handleBuscar}
+        />
 
-    </div>
+        {loading && (
+          <div className="centrado">
+            <CircularProgress />
+          </div>
+        )}
 
-  )
-    
+        {error && (
+          <Alert severity="error">
+            {error}
+          </Alert>
+        )}
+
+        {data && (
+          <Card pokemon={data} />
+        )}
+
+      </Stack>
+
+    </Container>
+  </div>
+);
 }
-
 
 export default App

@@ -1,0 +1,10 @@
+.BuscadorPokemon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centrado {
+  margin-top: 20px;
+  text-align: center;
+}

@@ -1,23 +1,44 @@
-function Card({ pokemon }) {
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Typography
+} from "@mui/material";
 
+
+function PokemonCard({ pokemon }) {
   return (
+    <Card
+      sx={{
+        width: 300,
+        mt: 3
+      }}
+    >
 
-    <div>
-
-      <img
-        src={pokemon.sprites.front_default}
+      <CardMedia
+        component="img"
+        image={pokemon.sprites.front_default}
         alt={pokemon.name}
       />
 
-      <h2>{pokemon.name}</h2>
+      <CardContent>
 
-      <p>Peso: {pokemon.weight}</p>
+        <Typography variant="h5">
+          {pokemon.name}
+        </Typography>
 
-      <p>Altura: {pokemon.height}</p>
+        <Typography>
+          Peso: {pokemon.weight}
+        </Typography>
 
-    </div>
+        <Typography>
+          Altura: {pokemon.height}
+        </Typography>
 
+      </CardContent>
+
+    </Card>
   );
 }
 
-export default Card;
+export default PokemonCard;

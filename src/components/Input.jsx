@@ -1,20 +1,23 @@
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+
 function Input({ valor, setValor, onBuscar }) {
-
   return (
-    <div>
-
-      <input
-        type="text"
-        placeholder="Ingrese un Pokémon"
+    <>
+      <TextField
+        label="Nombre del Pokémon"
+        variant="outlined"
         value={valor}
         onChange={(e) => setValor(e.target.value)}
       />
 
-      <button onClick={onBuscar}>
+      <Button
+        variant="contained"
+        onClick={onBuscar}
+      >
         Buscar
-      </button>
-
-    </div>
+      </Button>
+    </>
   );
 }
 
